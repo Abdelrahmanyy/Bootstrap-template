@@ -49,5 +49,11 @@
 
 .bi-x-circle{
     font-size: 1.3rem;
-    transition: 1s;
+    transition: 0.25s;
+    color: #adb5bd;
+}
+
+.bi-x-circle:hover{
+    font-size: 1.5rem;
+    color: #fff;
 }
