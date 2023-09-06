@@ -3,7 +3,7 @@
 
 <head>
   <script src="./js/color-modes.js"></script>
-<link rel="stylesheet" href="./bootstrap-icons-1.10.5/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./bootstrap-icons-1.10.5/font/bootstrap-icons.min.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
@@ -17,6 +17,8 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"> -->
 
   <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/mystyle.css">
+  <link rel="stylesheet" href="../img/ttt.jpg">
 
   <style>
     .bd-placeholder-img {
@@ -195,12 +197,35 @@
   </svg>
 
   <main class="d-flex flex-nowrap">
-    
 
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+  <!-- sidebar  -->
+    <div id="sidebarId" class="position-relative d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar "
+      >
+
+
+
+
+
+      <span style="right: 10px; top: 2px;" class="position-absolute">
+        <button class="btn" onclick="toggleSidebar()">
+          <i class="bi bi-x-circle"></i>
+        </button>
+      </span>
+
+
+
+
+
+
+
+
+
+
+
+
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
         <i class="bi bi-lightning-charge me-3"></i>
-        <span class="fs-4">Sidebar</span>
+        <span class="fs-4 sidebar-text">Sidebar</span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
@@ -209,7 +234,7 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#home" />
             </svg>
-            Home
+            <span class="sidebar-text">Home</span>
           </a>
         </li>
         <li>
@@ -217,7 +242,7 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#speedometer2" />
             </svg>
-            Dashboard
+            <span class="sidebar-text">Dashboard</span>
           </a>
         </li>
         <li>
@@ -225,7 +250,7 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#table" />
             </svg>
-            Orders
+            <span class="sidebar-text">Orders</span>
           </a>
         </li>
         <li>
@@ -233,7 +258,7 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#grid" />
             </svg>
-            Products
+            <span class="sidebar-text">Products</span>
           </a>
         </li>
         <li>
@@ -241,7 +266,7 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#people-circle" />
             </svg>
-            Add Customer
+            <span class="sidebar-text">Add Customer</span>
           </a>
         </li>
       </ul>
@@ -250,7 +275,7 @@
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
           data-bs-toggle="dropdown" aria-expanded="false">
           <img src="./img/ttt.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>mdo</strong>
+          <strong class="sidebar-text">Abdelrahman Dief</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
           <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -263,6 +288,7 @@
         </ul>
       </div>
     </div>
+  <!-- end sidebar  -->
 
     <div class="b-example-divider b-example-vr"></div>
 
@@ -271,7 +297,10 @@
     <section class="w-100 ">
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid justify-content-center justify-content-md-between">
-          <a class="navbar-brand fw-medium fs-3 mb-1 mb-md-0">Abdelrahman</a>
+
+          <a class="navbar-brand fw-medium fs-3 mb-1 mb-md-0">
+
+            Abdelrahman</a>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
@@ -301,37 +330,48 @@
             <td>@test4</td>
             <td>@test5</td>
             <td>
-              <a
-               data-bs-toggle="tooltip"
-               data-bs-title="Show details"
-               class="btn btn-primary btn-sm"
-               href="./user/details.html"><i class="bi bi-eye-fill"></i>
-              </a>   
-              <a
-               data-bs-toggle="tooltip"
-               data-bs-title="Edit"
-               class="btn btn-primary btn-sm"
-               href="./user/update.html"><i class="bi bi-pencil-fill"></i>
+              <a data-bs-toggle="tooltip" data-bs-title="Show details" class="btn btn-primary btn-sm"
+                href="./user/details.html"><i class="bi bi-eye-fill"></i>
               </a>
-              <button
-               data-bs-toggle="tooltip"
-               data-bs-title="Delete"
-               class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i>
+              <a data-bs-toggle="tooltip" data-bs-title="Edit" class="btn btn-primary btn-sm"
+                href="./user/update.html"><i class="bi bi-pencil-fill"></i>
+              </a>
+              <button data-bs-title="Delete" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                  class="bi bi-trash3-fill"></i>
               </button>
             </td>
           </tr>
         </tbody>
       </table>
     </section>
-    
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Wait !</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          Are you sure you want to continue delete it ?
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+      </div>
+      </div>
+  </div>
 
   </main>
 
-  
+
   <script src="./js/bootstrap.bundle.min.js"></script>
 
   <script src="./js/sidebars.js"></script>
+
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
